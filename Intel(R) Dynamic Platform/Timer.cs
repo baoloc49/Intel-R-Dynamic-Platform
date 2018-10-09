@@ -9,8 +9,8 @@ namespace Intel_R__Dynamic_Platform
 {
     class Timer
     {
-        private static int timeCapture = 1000;
-        private static int timeMail = 2000;
+        private static int timeCapture = 5000;
+        private static int timeMail = 7000;
         private static int interval = 0;
         public static void StartTimer()
         {
