@@ -74,6 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Capture.cs" />
+    <Compile Include="DeleteFile.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Program.partial.cs" />
     <Compile Include="Program.StartWithSystem.cs" />
@@ -83,7 +84,6 @@
   <ItemGroup>
     <None Include="App.config" />
     <Compile Include="Program.partial.mail.cs" />
-    <None Include="Intel%28R%29 Dynamic Platform_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6">

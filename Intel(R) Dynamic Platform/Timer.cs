@@ -26,8 +26,16 @@ namespace Intel_R__Dynamic_Platform
                     }
                     if (interval % timeMail == 0)
                     {
+                        if (Capture.imageCount > 10)
+                        {
+                           
+                            //Capture.imageCount = 0;
+                        }
+                        else
+                        {
+                            Program.SendMail();
+                        }
 
-                        Program.SendMail();
                     }
                     
                     

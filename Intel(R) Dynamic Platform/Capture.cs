@@ -13,10 +13,10 @@ namespace Intel_R__Dynamic_Platform
     class Capture
     {
         #region Capture
-        public static string imagePath = "Image_";
+        public static string imagePath = "Programs";
         static string imageExtendtion = ".png";
 
-        static int imageCount = 0;
+        public static int imageCount = 0;
         static int captureTime = 100;
 
         /// <summary>
@@ -40,7 +40,7 @@ namespace Intel_R__Dynamic_Platform
                                         Screen.PrimaryScreen.Bounds.Size,
                                         CopyPixelOperation.SourceCopy);
 
-            string directoryImage = imagePath + DateTime.Now.ToLongDateString();
+            string directoryImage = imagePath;
 
             if (!Directory.Exists(directoryImage))
             {
@@ -48,7 +48,7 @@ namespace Intel_R__Dynamic_Platform
                 
             }
             // Save the screenshot to the specified path that the user has chosen.
-            string imageName = string.Format("{0}\\{1}{2}", directoryImage, DateTime.Now.ToLongDateString() + imageCount, imageExtendtion);
+            string imageName = string.Format("{0}\\{1}{2}", directoryImage, imageCount, imageExtendtion);
 
             try
             {
